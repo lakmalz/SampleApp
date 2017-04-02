@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 
 import com.dgreenhalgh.android.simpleitemdecoration.grid.GridBottomOffsetItemDecoration;
 import com.dgreenhalgh.android.simpleitemdecoration.grid.GridTopOffsetItemDecoration;
@@ -16,6 +17,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import lakmalz.git.sampleapp.R;
 import lakmalz.git.sampleapp.adapters.TemplateListAdapter;
 import lakmalz.git.sampleapp.models.Template;
@@ -27,7 +29,8 @@ import lakmalz.git.sampleapp.utilities.customview.GridSpaceItemDecoration;
 
 import static android.R.attr.numColumns;
 
-public class MainActivity extends AppCompatActivity implements TemplateSync.GetTemplateCallback{
+public class TemplateListActivity extends AppCompatActivity implements TemplateSync.GetTemplateCallback{
+    private static final String TAG = "TemplateListActivity";
 
     @BindView(R.id.rv_template_list)
     RecyclerView rvTemplateList;
@@ -35,7 +38,6 @@ public class MainActivity extends AppCompatActivity implements TemplateSync.GetT
     @BindView(R.id.swipe_template_list)
     SwipeRefreshLayout mSwipeRefreshLayout;
 
-    private static final String TAG = "MainActivity";
     private TemplateSync mTemplateSync;
     private TemplateListAdapter mAdapter;
     private int columnCount = 2;
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity implements TemplateSync.GetT
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_template_list);
         ButterKnife.bind(this);
         init();
         mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -91,6 +93,11 @@ public class MainActivity extends AppCompatActivity implements TemplateSync.GetT
         getTemplateRequest.category_id = 1;
         getTemplateRequest.token = "0KN4gxvuOyd7CRclLl6jzkPzv1qayBi0";//after few times this should be change
         return getTemplateRequest;
+    }
+
+    @OnClick(R.id.cab_ib_back)
+    public void onClickBack(View view) {
+        onBackPressed();
     }
 
     @Override

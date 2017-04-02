@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:gravity="center"
+              android:padding="45dp"
+              android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_get_template"
+        android:layout_width="match_parent"
+        android:background="@color/red"
+        android:text="Template List"
+        android:textColor="@color/app_white"
+        android:textStyle="bold"
+        android:layout_height="48dp"/>
+
+    <Button
+        android:id="@+id/btn_multiple_layout"
+        android:layout_width="match_parent"
+        android:layout_marginTop="16dp"
+        android:background="@color/red"
+        android:textColor="@color/app_white"
+        android:textStyle="bold"
+        android:text="Mutiple layouts list"
+        android:layout_height="48dp"/>
+
+</LinearLayout>
