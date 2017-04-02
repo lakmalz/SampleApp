@@ -91,7 +91,8 @@ public class TemplateListActivity extends AppCompatActivity implements TemplateS
     private GetTemplateRequest createGetTemplateRequest() {
         GetTemplateRequest getTemplateRequest = new GetTemplateRequest();
         getTemplateRequest.category_id = 1;
-        getTemplateRequest.token = "0KN4gxvuOyd7CRclLl6jzkPzv1qayBi0";//after few times this should be change
+        getTemplateRequest.token = "ewrtewtwertsdsdfhdfghd34645366";//after few times this should be
+        // change//0KN4gxvuOyd7CRclLl6jzkPzv1qayBi0
         return getTemplateRequest;
     }
 
